@@ -27,7 +27,8 @@ function App() {
       <h3 style={randomColor}>{greeting }</h3>
       <h2>Hey {name}</h2>
       <h2>current Year : {year}</h2>
-      <h1>happy Learning!</h1>
+      <h1>happy Learning!</h1><span>:mic</span>
+
     </div>
   );
 }
