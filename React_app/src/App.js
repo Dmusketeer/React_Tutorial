@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 
-
-
-
 //class components:
 class App extends Component {
 // define states in class component
