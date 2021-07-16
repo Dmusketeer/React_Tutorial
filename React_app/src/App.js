@@ -7,10 +7,11 @@ import {useState} from 'react';  //useState is a hook for state
 // const data="Dheeraj"
 
 function App() {
- const [data,setData] = useState("Name Please");
+//  const [data,setData] = useState("Name Please");
+ const [data,setData] = useState(0);
 
  function updateData(){
-   setData("Dheeraj Tiwari");
+   setData(data+1);
  }
   return (
     <>
