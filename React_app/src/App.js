@@ -1,25 +1,15 @@
 import React, {Component} from 'react';
+import Student from './Components/student'
 
 //class components:
-class App extends Component {
-// define states in class component
-constructor(){
-    super();
-    this.state={
-        data:0
-    }
-}
-Myname(){
-    this.setState({data:"Hey Buddy!"}); 
-    this.setState({data:this.state.data+1}); 
-}
-    render(){
-        return (
-            <div className="App">
-            <h1>{this.state.data}</h1>
-            <button onClick={()=>this.Myname()}>Update</button>
-            </div>
-        )
-    }
+function App(){
+    return(
+        <>
+         <Student fname={"Dheeraj"} lname="Tiwari" others={{age:27 ,address:"delhi"}}/>
+         <Student fname={"Raj"} lname="Varma" others={{age:25 ,address:"noida" }}/>
+         <Student fname={"Santanu"} lname="Rao" others={{age:29 ,address:"US"}}/>
+        </>
+         
+)
 }
 export default App;
