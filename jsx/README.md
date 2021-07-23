@@ -1,0 +1,1 @@
+Read more about [JSX](https://www.geeksforgeeks.org/jsx-full-form/#:~:text=JSX%20stands%20for%20JavaScript%20XML,React%20(within%20JavaScript%20code).&text=Instead%20of%20separating%20the%20markup,uses%20components%20for%20this%20purpose.) 
