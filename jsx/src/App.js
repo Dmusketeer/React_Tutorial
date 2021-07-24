@@ -19,11 +19,30 @@ function App() {
     return "Enter MotherName";
   }
   
-const blogObj={
-  "title": "Blog Title",
-  "description": " lorem sorem dorem heyy nouu laoiu mahfiu sanul ,hewroi ,qweyub ,qw3erwrfrtgferuhwqdjk "
+  const blogArr = [{
+    "id":1,
+    "title": "Blog Title 1",
+    "description": " lorem sorem dorem heyy nouu laoiu mahfiu sanul ,hewroi ,qweyub ,qw3erwrfrtgferuhwqdjk "
+  }, {
+    "id": 2,
+    "title": "Blog Title 2",
+    "description": " lorem sorem dorem heyy nouu laoiu mahfiu sanul ,hewroi ,qweyub ,qw3erwrfrtgferuhwqdjk "
+},{
+    "id": 3,
+    "title": "Blog Title 3",
+    "description": " lorem sorem dorem heyy nouu laoiu mahfiu sanul ,hewroi ,qweyub ,qw3erwrfrtgferuhwqdjk "
+}];
 
-}
+const blogCards = blogArr.map( (item,pos)=>{
+  console.log(item);
+  return(
+    <div className="blogCard" key={item.id}>
+      <h3>{item.title}</h3>
+      <p>{item.description}</p>
+    </div>
+  )
+});
+
 
   return (
     <div className="App">
@@ -38,10 +57,7 @@ const blogObj={
       <h2>{
         myFev.game==="chess"?"chess":"false"
         }</h2> */}
-    <div className="blogCard">
-      <h3>{blogObj.title}</h3>
-      <p>{blogObj.description}</p>
-      </div>
+      {blogCards}
     </div>
   );
 }
