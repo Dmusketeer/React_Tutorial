@@ -24,10 +24,11 @@
   color: white;
 }
 .blogCard{
+  background-color: beige;
   margin:10px;
   padding:10px;
   border-radius: 10px;
-  box-shadow: 2px 5px 10px #ccc;
+  box-shadow: 2px 5px 10px rgb(196, 193, 193);
   box-sizing: border-box;
 }
 
