@@ -1,0 +1,35 @@
+.result {
+  height: 60px;
+  background-color: rgb(63, 57, 57);
+  width: 100%;
+  border-radius: 5px;
+}
+
+.result p {
+  font-size: 40px;
+  margin: 5px;
+}
+
+.calculator-body {
+  max-width: 400px;
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+
+.button {
+  display: block;
+}
+
+button {
+  width: 25%;
+  border-radius: 5px;
+  height: 60px;
+  font-size: 30px;
+  background-color: rgba(25, 205, 255, 0.7);
+}
+
+.footer {
+  margin-top: 150px;
+  text-align: center;
+}
