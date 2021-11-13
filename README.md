@@ -35,14 +35,6 @@
 - So, while using framework your framework is in charge of flow.
 
 
-
-
-
-
-
-
-
-
 Initial step:
 - create-react-app appname
    - cd appname
