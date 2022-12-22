@@ -15,10 +15,19 @@
 
 ## React useState Hook:
 - The React useState Hook allows us to track state in a function component.
+- To use the useState Hook, we first need to import it into our component.
+ 
+        
+        import { useState } from "react";
 
+- Notice that we are destructuring useState from react as it is a named export.
 
+## Initialize useState
+- We initialize our state by calling useState in our function component.
+- useState accepts an initial state and returns two values:
 
-
+    1- The current state. <br />
+    2- A function that updates the state.
 
 
 
