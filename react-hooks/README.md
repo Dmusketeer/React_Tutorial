@@ -30,9 +30,27 @@
     2- A function that updates the state.
 
 
+- Initialize state at the top of the function component.
 
+```js
+import {useState} from 'react';
+const doSomeTask=()=>{
+       const [task,setTask]=useState("")
+        return(
+                <>
+                <h1>Something</h1>
+                </>
+        )
+}
+```
 
+- Notice that again, we are destructuring the returned values from useState.
+- The first value, task, is our current state.
+- The second value, setTask, is the function that is used to update our state.
 
+<b>NOTE : </b> - These names are variables that can be named anything you would like.
+
+- Lastly, we set the initial state to an empty string: useState("")
 
 
 
