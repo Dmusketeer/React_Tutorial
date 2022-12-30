@@ -141,4 +141,15 @@ function Car() {
 - Because we need the current value of state, we pass a function into our setCar function. This function receives the previous value.
 We then return an object, spreading the previousState and overwriting only the color.
 
+<hr />
+
+## React useEffect Hook
+
+- The useEffect Hook allows you to perform side effects in your components.
+- Some examples of side effects are: fetching data, directly updating the DOM, and timers.
+- useEffect accepts two arguments. The second argument is optional.
+
+  ```js
+  useEffect(<function>, <dependency>)
+  ```
 
