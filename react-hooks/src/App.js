@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
-function App() {
-  const [count, setCounter] = useState(0);
+import ComponentC from "./components/ComponentC";
 
+export const UserContext = React.createContext();
+function App() {
+  // const [count, setCounter] = useState(0);
   // useEffect(() => {
   //   setTimeout(() => {
   //     setCounter((count) => {
@@ -9,18 +11,19 @@ function App() {
   //     });
   //   }, 1000);
   // }, []);
-  useEffect(() => {
-    let timer = setTimeout(() => {
-      setCounter((count) => {
-        return count + 1;
-      });
-    }, 1000);
-    return () => setTimeout(timer);
-  }, []);
-
+  // useEffect(() => {
+  //   let timer = setTimeout(() => {
+  //     setCounter((count) => {
+  //       return count + 1;
+  //     });
+  //   }, 1000);
+  //   return () => setTimeout(timer);
+  // }, []);
   return (
     <>
-      <h1>I have render {count} times</h1>
+      <UserContext.Provider value={"Dheeraj"}>
+        <ComponentC />
+      </UserContext.Provider>
     </>
   );
 }
