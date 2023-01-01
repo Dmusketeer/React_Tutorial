@@ -233,3 +233,114 @@ function Counter() {
 - Some effects require cleanup to reduce memory leaks.
 - Timeouts, subscriptions, event listeners, and other effects that are no longer needed should be disposed.
 - We do this by including a <b>return function</b> at the end of the useEffect Hook.
+
+<hr />
+
+## React useContext Hook
+
+#### React Context
+- React Context is a way to manage state globally.
+- It can be used together with the useState Hook to share state between deeply nested components more easily than with useState alone.
+
+#### <b>The Problem</b>
+- State should be held by the highest parent component in the stack that requires access to the state.
+- To illustrate, we have many nested components. The component at the top and bottom of the stack need access to the state.
+- To do this without Context, we will need to pass the state as "props" through each nested component. This is called "<b>prop drilling</b>".
+
+Passing "props" through nested components:
+
+```js
+import React,{useState} from 'react'
+
+const TestingComponent=()=>{
+const [user,setUser]=useState("Dheeraj")
+
+    return(
+        <>
+        <ComponentA user={user}/>
+        </>
+    )
+}
+
+const ComponentA = ({user}) => {
+    return (
+        <div>
+             <ComponentB user={user}/>
+        </div>
+    );
+}
+
+const ComponentB = ({user}) => {
+    return (
+        <div>
+             <ComponentC user={user}/>
+        </div>
+    );
+}
+
+const ComponentC = ({user}) => {
+    return (
+        <div>
+             <ComponentD user={user}/>
+        </div>
+    );
+}
+
+const ComponentD = ({user}) => {
+    return (
+        <div>
+            Hello! {user}.
+        </div>
+    );
+}
+```
+Even though components A,B and C did not need the state, they had to pass the state along so that it could reach component D.
+
+### The Solution
+- The solution is to create context.
+
+### Create Context
+- To create context, you must Import createContext and initialize it:
+```js
+const UserContext = createContext()
+```
+
+### Context Provider
+- Wrap child components in the Context Provider and supply the state value.
+
+```js
+const TestingComponent=()=>{
+const [user,setUser]=useState("Dheeraj")
+
+    return(
+        <>
+        <UserContext.Provider value={"Dheeraj"}>
+        <ComponentB user={user}/>
+        </UserContext.Provider>
+        </>
+    )
+}
+
+```
+- Now, all components in this tree will have access to the user Context.
+- Use the useContext Hook
+- In order to use the Context in a child component, we need to access it using the useContext Hook.
+- First, include the useContext in the import statement:
+
+```js
+import { useState, createContext, useContext } from "react";
+```
+- Then you can access the user Context in all components:
+
+```js
+const ComponentD = (user) => {
+    const user=useContext(UserContext)
+    return (
+        <div>
+            Hello! {user}.
+        </div>
+    );
+}
+```
+
+<hr />
