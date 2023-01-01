@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ComponentC from "./components/ComponentC";
+import FocusInput from "./components/FocusInput";
 
 export const UserContext = React.createContext();
 function App() {
@@ -21,9 +21,7 @@ function App() {
   // }, []);
   return (
     <>
-      <UserContext.Provider value={"Dheeraj"}>
-        <ComponentC />
-      </UserContext.Provider>
+      <FocusInput />
     </>
   );
 }
