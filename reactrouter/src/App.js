@@ -1,24 +1,25 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home.jsx";
-import About from "./components/About.jsx";
-import Profile from "./components/Profile.jsx";
-import Contact from "./components/Contact.jsx";
-import Navbar from "./components/Navbar.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Profile from "./components/Profile";
+import Contact from "./components/Contact";
+import Navbar from "./components/Navbar";
+
 export default function App() {
   return (
     <>
-      <Router>
+      <BrowserRouter>
         <Navbar />
         <Routes>
-          {/* <Route path="/" element={<Ap />} /> */}
-          <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/">
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="profile" element={<Profile />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
         </Routes>
-        <h1>hey bro</h1>
-      </Router>
+      </BrowserRouter>
     </>
   );
 }
