@@ -3,11 +3,13 @@ import React, { useState } from "react";
 const Form = () => {
   const [Details, setDetails] = useState("");
   const [Textarea, setTextarea] = useState("Content of text area");
+  const [Selected, setSelected] = useState("Altroz");
 
   const handleSumbit = (event) => {
     event.preventDefault();
     console.log(Details);
     alert(Textarea);
+    console.log(Selected);
   };
 
   const handleTextareaChange = (event) => {
@@ -19,6 +21,9 @@ const Form = () => {
     const value = event.target.value;
 
     setDetails((values) => ({ ...values, [name]: value }));
+  };
+  const handleSelected = (event) => {
+    setSelected(event.target.value);
   };
   return (
     <>
@@ -49,6 +54,12 @@ const Form = () => {
             rows="10"
           />
         </label>
+        <select value={Selected} onChange={handleSelected}>
+          <option value="Ford">Ford</option>
+          <option value="Altroz">Altroz</option>
+          <option value="I20">I20</option>
+          <option value="Swift">Swift</option>
+        </select>
         <input type="submit" />
       </form>
     </>
