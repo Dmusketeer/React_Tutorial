@@ -2,15 +2,22 @@ import React, { useState } from "react";
 
 const Form = () => {
   const [Details, setDetails] = useState("");
+  const [Textarea, setTextarea] = useState("Content of text area");
 
   const handleSumbit = (event) => {
     event.preventDefault();
     console.log(Details);
+    alert(Textarea);
+  };
+
+  const handleTextareaChange = (event) => {
+    setTextarea(event.target.value);
   };
 
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
+
     setDetails((values) => ({ ...values, [name]: value }));
   };
   return (
@@ -32,6 +39,14 @@ const Form = () => {
             name="Age"
             value={Details.Age || ""}
             onChange={handleChange}
+          />
+        </label>
+        <label>
+          <textarea
+            value={Textarea}
+            onChange={handleTextareaChange}
+            cols="30"
+            rows="10"
           />
         </label>
         <input type="submit" />
