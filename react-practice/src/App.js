@@ -1,4 +1,6 @@
 import "./App.css";
+import Home from "./components/Home";
+import Form from "./components/Form.js";
 
 import React, { Component } from "react";
 
@@ -14,10 +16,9 @@ class App extends Component {
   render() {
     return (
       <>
-        <h1> Count:{this.state.count}</h1>
-        <button type="button" onClick={() => this.counter()}>
-          Add
-        </button>
+        <h1>Table of My friends</h1>
+        <Home />
+        <Form />
       </>
     );
   }
